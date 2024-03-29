@@ -1,0 +1,49 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+$calc-size: calc((100vh - $gap-x2) / 3);
+$item-size: clamp(300px, $calc-size, $calc-size);
+
+.skills {
+  @include sm-min {
+    padding: $gap-sm $gap-sm $gap;
+  }
+
+  @include sm {
+    padding: 0 $gap;
+  }
+
+  &__container {
+    display: grid;
+    grid-auto-rows: $item-size;
+
+    @include lg-min {
+      grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include lg-md {
+      grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include md-sm {
+      grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include sm-min {
+      gap: $gap-sm;
+    }
+
+    @include sm {
+      grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
+      grid-template-columns: repeat(1, 1fr);
+      gap: $gap;
+    }
+  }
+
+  &__actions {
+    @extend %btn-container;
+  }
+}

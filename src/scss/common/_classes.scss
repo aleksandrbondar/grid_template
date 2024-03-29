@@ -1,0 +1,119 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+.btn {
+  cursor: pointer;
+  color: $color-white;
+  border-width: 2px;
+  border-style: solid;
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.1em;
+  line-height: 1.2em;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: $color-accent;
+  }
+}
+
+.btn--light {
+  background-color: rgba($color-white, 0.1);
+  border-color: $color-white;
+
+  @include lg-min {
+    min-width: 250px;
+    min-height: 60px;
+    font-size: 1.125rem;
+  }
+
+  @include lg-md {
+    min-width: 200px;
+    min-height: 50px;
+  }
+
+  @include md {
+    min-width: 170px;
+    min-height: 40px;
+  }
+}
+
+.btn--primary {
+  min-height: 60px;
+  margin-block: $gap;
+  background-color: rgba($color-primary, 0.8);
+  border-color: $color-primary;
+
+  @include sm-min {
+    min-width: 350px;
+    font-size: 1.125rem;
+  }
+
+  @include sm {
+    min-width: 100%;
+  }
+}
+
+.btn--form {
+  width: 100%;
+  min-height: 60px;
+  font-size: 1.125rem;
+  border-color: rgba($color-white, 0);
+  border-bottom-color: rgba($color-white, 1);
+  background-color: rgba($color-white, 0.1);
+
+  &:hover,
+  &:focus {
+    background-color: $color-accent;
+    border-color: $color-white;
+  }
+}
+
+.input {
+  color: $color-white;
+  display: block;
+  width: 100%;
+  min-height: 60px;
+  padding-inline: 30px;
+  border-width: 2px;
+  border-style: solid;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+  &::placeholder {
+    transition: color 0.3s ease-in-out;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.input--form {
+  font-size: 1.125rem;
+  letter-spacing: 0.15em;
+  border-color: rgba($color-white, 0);
+  border-bottom-color: rgba($color-white, 1);
+  background-color: rgba($color-white, 0.05);
+
+  &::placeholder {
+    color: rgba($color-white, 0.51);
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    border-color: $color-white;
+    background-color: rgba($color-white, 0.15);
+
+    &::placeholder {
+      color: rgba($color-white, 1);
+    }
+  }
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}

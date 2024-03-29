@@ -1,0 +1,66 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.post {
+  background-color: $color-bg-article;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: #d8d8d8;
+
+    & img {
+      scale: 1.1;
+    }
+
+    & .post__title {
+      color: #2d3651;
+    }
+
+    & .post__text {
+      color: #2d3651;
+    }
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 1fr;
+    overflow: hidden;
+  }
+
+  &__img-container {
+    height: 100%;
+  }
+
+  &__content {
+    padding: $gap;
+    display: grid;
+    align-content: center;
+    text-align: center;
+  }
+
+  &__title {
+    transition: color 0.3s ease-in-out;
+  }
+
+  &__img {
+    @include abs-position(0, 0, auto, 0);
+    margin: 0;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: scale 0.3s ease-in-out;
+    }
+  }
+
+  &__text {
+    transition: color 0.3s ease-in-out;
+  }
+}

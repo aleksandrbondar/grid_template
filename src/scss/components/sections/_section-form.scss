@@ -1,0 +1,38 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.form {
+  background-color: $color-primary;
+
+  &__container {
+    @extend %container;
+    padding-block: $gap-lg;
+  }
+
+  &__form-group {
+    display: grid;
+    gap: $gap;
+    grid-auto-rows: $gap-x3;
+
+    @for $i from 1 through 3 {
+      :nth-of-type(#{$i}) {
+        grid-area: f#{$i};
+      }
+    }
+
+    @include lg-min {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "f1 f2 f3";
+    }
+
+    @include lg-md {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "f1 f1" "f2 f3";
+    }
+
+    @include md {
+      grid-template-columns: 1fr;
+      grid-template-areas: "f1" "f2" "f3";
+    }
+  }
+}

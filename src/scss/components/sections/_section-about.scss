@@ -1,0 +1,120 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.about {
+  background-color: $color-gray-light;
+
+  @include lg-min {
+    padding-block: $gap-x5;
+  }
+
+  @include lg-md {
+    padding-block: $gap-x4;
+  }
+
+  @include md {
+    padding-block: $gap-x3;
+  }
+
+  &__container {
+    @extend %container;
+    display: flex;
+
+    @include sm-min {
+      flex-direction: row;
+    }
+
+    @include md {
+      flex-direction: column;
+    }
+
+    @include lg-min {
+      gap: $gap-x5;
+    }
+
+    @include lg-md {
+      gap: $gap-x2;
+    }
+
+    @include md {
+      gap: $gap;
+    }
+  }
+
+  &__title {
+    margin-bottom: 43px;
+  }
+
+  span {
+    display: block;
+  }
+
+  &__content {
+
+    p {
+      @include lg-min {
+        font-size: 1.125rem;
+        letter-spacing: 0.049em;
+      }
+
+      @include lg {
+        font-size: 1rem;
+        letter-spacing: 0.055em;
+      }
+    }
+
+    :nth-child(2) {
+      position: relative;
+
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 2px;
+        height: 200px;
+        background-color: #707070;
+        align-self: center;
+
+        @include xl-min {
+          right: -50px;
+        }
+
+        @include xl-lg {
+          right: -50px;
+        }
+
+        @include lg-md {
+          right: -20px;
+        }
+
+        @include md-sm {
+          right: -10px;
+        }
+
+        @include sm {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include lg-min {
+      min-width: 271px;
+    }
+
+    @include lg {
+      min-width: 236px;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 480px;
+    }
+  }
+}

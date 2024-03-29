@@ -1,0 +1,57 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.posts {
+
+  @include lg-min {
+    margin-block: $gap-x5 $gap-x4;
+  }
+
+  @include md-min {
+    margin-block: $gap-x5 $gap-x3;
+  }
+
+  @include md {
+    margin-block: $gap-x4 $gap-x2;
+  }
+
+  &__container {
+    @extend %container;
+  }
+
+  &__grid {
+    display: grid;
+    gap: $gap;
+
+    @for $i from 1 through 6 {
+      .post:nth-of-type(#{$i}) {
+        grid-area: a#{$i};
+      }
+    }
+
+    @include lg-min {
+      grid-template-areas: "a1 a1 a2 a3" "a4 a5 a6 a6";
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include lg-md {
+      grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6";
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include md-sm {
+      grid-template-areas: "a1 a2" "a3 a4" "a5 a6";
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include sm {
+      grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6";
+      grid-template-columns: repeat(1, 1fr);
+      gap: $gap;
+    }
+  }
+
+  &__actions {
+    @extend %btn-container;
+  }
+}
