@@ -74,12 +74,30 @@ h2 {
 
 h3 {
   color: $color-gray;
-  font-family: $font-header;
   font-weight: bold;
+}
+
+.skills h3 {
+  font-family: $font-main;
+  letter-spacing: 0.1em;
+  line-height: 1.15;
+
+  @include md-min {
+    font-size: 1.25rem;
+  }
+
+  @include md {
+    font-size: 1.125rem;
+  }
+}
+
+.post__title {
+  font-family: $font-header;
   font-size: 1.125rem;
   line-height: 1.15em;
   letter-spacing: 0.05em;
 }
+
 
 a {
   text-decoration: none;

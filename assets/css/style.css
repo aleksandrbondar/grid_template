@@ -239,13 +239,23 @@ h2 {
 }
 
 h3 {
-  letter-spacing: 0.05em;
-
   color: #637588;
+
+  font-weight: bold;
+}
+
+.skills h3 {
+  letter-spacing: 0.1em;
+
+  font-family: "Roboto", sans-serif;
+  line-height: 1.15;
+}
+
+.post__title {
+  letter-spacing: 0.05em;
 
   font-family: "Roboto Slab", serif;
   font-size: 1.125rem;
-  font-weight: bold;
   line-height: 1.15em;
 }
 
@@ -317,7 +327,7 @@ a {
   min-height: 60px;
 
   border-color: rgba(255, 255, 255, 0);
-  border-bottom-color: white;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.1);
 
   font-size: 1.125rem;
@@ -371,56 +381,57 @@ a {
   letter-spacing: 0.15em;
 
   border-color: rgba(255, 255, 255, 0);
-  border-bottom-color: white;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.05);
 
   font-size: 1.125rem;
 }
 .input--form::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.51);
+  color: #637588;
 }
 .input--form::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.51);
+  color: #637588;
 }
 .input--form:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.51);
+  color: #637588;
 }
 .input--form::-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.51);
+  color: #637588;
 }
 .input--form::placeholder {
-  color: rgba(255, 255, 255, 0.51);
+  color: #637588;
 }
 .input--form:focus,
 .input--form:hover,
 .input--form:active {
-  border-color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: white;
   background-color: rgba(255, 255, 255, 0.15);
 }
 .input--form:focus::-webkit-input-placeholder,
 .input--form:hover::-webkit-input-placeholder,
 .input--form:active::-webkit-input-placeholder {
-  color: white;
+  color: #8c9bab;
 }
 .input--form:focus::-moz-placeholder,
 .input--form:hover::-moz-placeholder,
 .input--form:active::-moz-placeholder {
-  color: white;
+  color: #8c9bab;
 }
 .input--form:focus:-ms-input-placeholder,
 .input--form:hover:-ms-input-placeholder,
 .input--form:active:-ms-input-placeholder {
-  color: white;
+  color: #8c9bab;
 }
 .input--form:focus::-ms-input-placeholder,
 .input--form:hover::-ms-input-placeholder,
 .input--form:active::-ms-input-placeholder {
-  color: white;
+  color: #8c9bab;
 }
 .input--form:focus::placeholder,
 .input--form:hover::placeholder,
 .input--form:active::placeholder {
-  color: white;
+  color: #8c9bab;
 }
 
 .visually-hidden {
@@ -656,8 +667,6 @@ a {
   left: 0;
 
   margin: 0;
-
-  letter-spacing: 0.1em;
 }
 .skill-item__link {
   display: -webkit-box;
@@ -784,7 +793,7 @@ a {
 
   content: "";
 
-  background-color: #707070;
+  background-color: rgba(99, 117, 136, 0.1);
 }
 .about__img {
   display: -webkit-box;
@@ -952,6 +961,7 @@ a {
 }
 .footer__title :first-child {
   margin-right: -0.5em;
+  margin-bottom: -0.5px;
 
   letter-spacing: 0.33em;
 
@@ -960,7 +970,7 @@ a {
 .footer__title :last-child {
   letter-spacing: 0.05em;
 
-  color: #ffffff;
+  color: #e5e5e5;
 
   font-weight: 700;
 }
@@ -995,7 +1005,7 @@ a {
 }
 .social::after {
   position: absolute;
-  bottom: -18px;
+  bottom: -16px;
   left: calc(50% - 37.5px);
 
   display: block;
@@ -1005,16 +1015,13 @@ a {
 
   content: "";
 
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 @media (min-width: 576px) {
   .btn--primary {
     min-width: 350px;
 
     font-size: 1.125rem;
-  }
-  .skills {
-    padding: 10px 10px 20px;
   }
   .skills__container {
     gap: 10px;
@@ -1027,6 +1034,9 @@ a {
   }
 }
 @media (min-width: 768px) {
+  .skills h3 {
+    font-size: 1.25rem;
+  }
   .header-navbar__list {
     margin: 0 -10px 0 0;
     padding: 0;
@@ -1036,8 +1046,8 @@ a {
   .header-navbar__btn {
     display: none;
   }
-  .skill-item__title {
-    font-size: 1.25rem;
+  .skills {
+    padding: 10px 10px 20px;
   }
   .posts {
     margin-block: 100px 60px;
@@ -1152,6 +1162,9 @@ a {
   h2 {
     font-size: 1.5rem;
   }
+  .skills h3 {
+    font-size: 1.125rem;
+  }
   .btn--light {
     min-width: 170px;
     min-height: 40px;
@@ -1187,8 +1200,10 @@ a {
   .header-navbar__item:last-child {
     border: none;
   }
-  .skill-item__title {
-    font-size: 1.125rem;
+  .skills {
+    padding-top: 20px;
+
+    padding-inline: 20px;
   }
   .about {
     padding-block: 60px;
@@ -1238,9 +1253,6 @@ a {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
         flex-direction: column;
-  }
-  .skills {
-    padding: 0 20px;
   }
   .skills__container {
     gap: 20px;

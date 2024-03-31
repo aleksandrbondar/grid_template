@@ -62,7 +62,7 @@
   min-height: 60px;
   font-size: 1.125rem;
   border-color: rgba($color-white, 0);
-  border-bottom-color: rgba($color-white, 1);
+  border-bottom-color: rgba($color-white, 0.2);
   background-color: rgba($color-white, 0.1);
 
   &:hover,
@@ -95,21 +95,22 @@
   font-size: 1.125rem;
   letter-spacing: 0.15em;
   border-color: rgba($color-white, 0);
-  border-bottom-color: rgba($color-white, 1);
+  border-bottom-color: rgba($color-white, 0.2);
   background-color: rgba($color-white, 0.05);
 
   &::placeholder {
-    color: rgba($color-white, 0.51);
+    color: rgba($color-gray, 1);
   }
 
   &:focus,
   &:hover,
   &:active {
-    border-color: $color-white;
+    border-color: rgba($color-white, 0.2);
+    border-bottom-color: rgba($color-white, 1);
     background-color: rgba($color-white, 0.15);
 
     &::placeholder {
-      color: rgba($color-white, 1);
+      color: rgba(rgb(140, 155, 171), 1);
     }
   }
 }

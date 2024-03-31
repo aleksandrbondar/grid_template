@@ -5,12 +5,13 @@ $calc-size: calc((100vh - $gap-x2) / 3);
 $item-size: clamp(300px, $calc-size, $calc-size);
 
 .skills {
-  @include sm-min {
+  @include md-min {
     padding: $gap-sm $gap-sm $gap;
   }
 
-  @include sm {
-    padding: 0 $gap;
+  @include md {
+    padding-inline: $gap;
+    padding-top: $gap;
   }
 
   &__container {
